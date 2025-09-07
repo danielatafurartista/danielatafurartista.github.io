@@ -23,7 +23,6 @@ This website uses a **build system** to combine modular sections into a single `
 
 ## Development Workflow
 
-### Option 1: All-in-One Dev Server (Recommended)
 
 ```bash
 # Start development server with auto-build
@@ -40,20 +39,6 @@ node dev-server.js
 # 2. Build the website
 node build.js
 
-# 3. Start server
-npx http-server -p 8000
-```
-
-### Option 3: Auto-Build Watcher + Separate Server
-
-```bash
-# Terminal 1: Start auto-rebuild watcher
-node watch-build.js
-
-# Terminal 2: Start server
-npx http-server -p 8000
-```
-
 ## How It Works
 
 1. **Template**: `index-template.html` contains placeholders like `<div data-include="intro"></div>`
@@ -67,13 +52,6 @@ npx http-server -p 8000
 ✅ **DO**: Run build script after changes  
 ❌ **DON'T**: Edit `index.html` directly (it gets overwritten)
 
-## Benefits
-
-- ✅ **Modular**: Each section in separate file
-- ✅ **Clean**: No JavaScript dependencies in final site
-- ✅ **Fast**: Perfect CSS compatibility
-- ✅ **Simple**: Just HTML, CSS, and a build step
-- ✅ **GitHub Pages Ready**: Deploy `index.html` directly
 
 ## Deployment
 
