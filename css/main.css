@@ -83,7 +83,7 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-  color: #cf1767;
+  color: #910a0a;
   transition: all 0.3s ease-in-out;
 }
 
@@ -3286,13 +3286,13 @@ input::-moz-focus-inner {
 .contact-main a:hover,
 .contact-main a:focus,
 .contact-main a:active {
-  color: #cf1767;
+  color: #e45a5a;
   border-bottom: 1px solid white;
 }
 
 .contact-email {
   font-family: "Roboto", sans-serif;
-  font-size: 11.2rem;
+  font-size: 8rem;
   font-weight: 400;
   line-height: 1;
   margin: 5.6rem 0 8rem;
