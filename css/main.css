@@ -62,6 +62,15 @@ html {
 
 }
 
+/* Add this at the beginning of the file */
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+p, a, span, div,
+input, textarea, button {
+    font-family: "Courier New", Courier, monospace !important;
+}
+
 html,
 body {
   height: 100%;
@@ -69,7 +78,7 @@ body {
 
 body {
   background: #050505;
-  font-family: "Lora", serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1.7rem;
   font-style: normal;
   font-weight: normal;
