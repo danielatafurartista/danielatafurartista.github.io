@@ -18,6 +18,8 @@ const translations = {
         // About section
         about_title: "About Me",
         about_subtitle: "More about me",
+        about_me_section:"My artistic research revolves around the body as a territory of experience and transformation, exploring its material, symbolic, and social boundaries. Works such as Muerde si tienes que Morder, Hartazgo, and Cenicera unfold performative actions that expose the tension between the intimate and the collective, while Cuerpo invadido and Punto a Punto expand this inquiry into installation and the relationship between space, object, and gesture. Together, these works aim to open questions about vulnerability, resistance, and the ways in which art activates processes of meaning through the body.",
+        education: "Exhibitions and Education",
 
         // Services section  
         services_title: "Services",
@@ -25,7 +27,7 @@ const translations = {
 
         // Works section
         works_title: "Works",
-        works_subtitle: "Selected works",
+        works_subtitle: "Artworks",
 
         // Contact section
         contact_title: "Contact",
@@ -54,6 +56,8 @@ const translations = {
         // About section
         about_title: "Acerca de Mí",
         about_subtitle: "Más sobre mí",
+        about_me_section:"Mi investigación artística se articula en torno al cuerpo como territorio de experiencia y transformación, explorando sus límites materiales, simbólicos y sociales. Obras como Muerde si tienes que Morder, Hartazgo y Cenicera plantean acciones performáticas que hacen visible la tensión entre lo íntimo y lo colectivo, mientras que Cuerpo invadido y Punto a Punto expanden esta reflexión hacia la instalación y la relación entre espacio, objeto y gesto. En conjunto, estas obras buscan abrir preguntas sobre la vulnerabilidad, la resistencia y las formas en que el arte activa procesos de sentido desde lo corporal.",
+        education: "Exposiciones y Educación",
 
         // Services section
         services_title: "Servicios",
@@ -61,7 +65,7 @@ const translations = {
 
         // Works section
         works_title: "Trabajos",
-        works_subtitle: "Trabajos seleccionados",
+        works_subtitle: "Obras",
 
         // Contact section
         contact_title: "Saluda",

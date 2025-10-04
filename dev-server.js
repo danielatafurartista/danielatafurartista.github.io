@@ -32,8 +32,7 @@ function buildSite() {
         let html = fs.readFileSync('index-template.html', 'utf8');
 
 
-        const sections = ['intro', 'works', 'about', 'services', 'testimonies', 'contact'];
-
+        const sections = ['works', 'about', 'services', 'testimonies', 'contact'];
 
         sections.forEach(section => {
             const placeholder = `<div data-include="${section}"></div>`;
