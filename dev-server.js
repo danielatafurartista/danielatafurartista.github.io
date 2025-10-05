@@ -5,7 +5,6 @@ const url = require('url');
 
 const PORT = 8000;
 
-
 const mimeTypes = {
     '.html': 'text/html',
     '.css': 'text/css',
@@ -28,9 +27,7 @@ function buildSite() {
     console.log('🔄 Rebuilding...');
 
     try {
-
         let html = fs.readFileSync('index-template.html', 'utf8');
-
 
         const sections = ['works', 'about', 'services', 'testimonies', 'contact'];
 
@@ -45,12 +42,8 @@ function buildSite() {
             }
         });
 
-
         html = html.replace('<script src="js/include-loader.js"></script>', '');
-
-
         html = html.replace('<link rel="stylesheet" href="css/include-fix.css">', '');
-
 
         fs.writeFileSync('index.html', html);
 
@@ -61,11 +54,9 @@ function buildSite() {
     }
 }
 
-
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url);
     let pathname = parsedUrl.pathname;
-
 
     if (pathname === '/') {
         pathname = '/index.html';
@@ -87,27 +78,58 @@ const server = http.createServer((req, res) => {
     });
 });
 
-
 buildSite();
 
+let buildTimeout = null;
+function scheduleBuild(delay = 100) {
+    if (buildTimeout) clearTimeout(buildTimeout);
+    buildTimeout = setTimeout(() => {
+        buildSite();
+        buildTimeout = null;
+    }, delay);
+}
 
+// watch views/ for changes (existing behavior)
 if (fs.existsSync('views/')) {
     fs.watch('views/', (eventType, filename) => {
         if (filename && filename.endsWith('.html')) {
-            console.log(`📝 ${filename} changed`);
-            buildSite();
+            console.log(`📝 views/${filename} changed (${eventType})`);
+            scheduleBuild();
         }
     });
 }
 
+// watch the main template file
+if (fs.existsSync('index-template.html')) {
+    fs.watch('index-template.html', (eventType, filename) => {
+        console.log(`📝 index-template.html changed (${eventType})`);
+        scheduleBuild();
+    });
+}
+
+// watch css/ folder for changes to rebuild when styles change
+if (fs.existsSync('css/')) {
+    try {
+        fs.watch('css/', { persistent: true }, (eventType, filename) => {
+            if (!filename) return;
+            const ext = path.extname(filename).toLowerCase();
+            if (ext === '.css') {
+                console.log(`📝 css/${filename} changed (${eventType})`);
+                scheduleBuild();
+            }
+        });
+    } catch (err) {
+        // fs.watch may throw on some platforms; fallback to polling via fs.readdir if needed
+        console.warn('⚠️ css folder watch failed, changes to CSS may not auto-rebuild:', err.message);
+    }
+}
 
 server.listen(PORT, () => {
     console.log('\n🚀 Development server started!');
     console.log(`🌐 Website: http://localhost:${PORT}`);
-    console.log('📝 Edit files in views/ directory - auto-rebuilds enabled');
+    console.log('📝 Edit files in views/, index-template.html or css/ - auto-rebuilds enabled');
     console.log('🛑 Press Ctrl+C to stop\n');
 });
-
 
 process.on('SIGINT', () => {
     console.log('\n👋 Shutting down development server...');

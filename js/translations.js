@@ -44,7 +44,7 @@ const translations = {
         about: "Acerca",
         services: "Servicios",
         works: "Trabajos",
-        contact: "Saluda",
+        contact: "Contacto",
 
         // Hero section
         hero_greeting: "Hola, soy Pablo",
@@ -68,7 +68,7 @@ const translations = {
         works_subtitle: "Obras",
 
         // Contact section
-        contact_title: "Saluda",
+        contact_title: "Contacto",
         contact_subtitle: "Ponte en contacto",
 
         // Language switcher
