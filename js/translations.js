@@ -36,7 +36,8 @@ const translations = {
         // Language switcher
         language: "Language",
         lang_english: "English",
-        lang_spanish: "Español"
+        lang_spanish: "Español",
+        return_to_works: "Return to Works"
     },
     es: {
         // Navigation
@@ -74,7 +75,8 @@ const translations = {
         // Language switcher
         language: "Idioma",
         lang_english: "English",
-        lang_spanish: "Español"
+        lang_spanish: "Español",
+        return_to_works: "Volver a Trabajos"
     }
 };
 

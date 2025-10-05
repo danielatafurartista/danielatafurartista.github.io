@@ -29,7 +29,7 @@
         $WIN.on('load', function() {
 
             //force page scroll position to top at page refresh
-            $('html, body').animate({ scrollTop: 0 }, 'normal');
+            // $('html, body').animate({ scrollTop: 0 }, 'normal'); // Comment out or remove this line
 
             // will first fade out the loading animation 
             $("#loader").fadeOut("slow", function() {
@@ -40,6 +40,16 @@
             // for hero content animations 
             $("html").removeClass('ss-preload');
             $("html").addClass('ss-loaded');
+
+            // Scroll to hash if present
+            if (window.location.hash) {
+                var target = $(window.location.hash);
+                if (target.length) {
+                    $('html, body').animate({
+                        'scrollTop': target.offset().top
+                    }, 800, 'swing');
+                }
+            }
         
         });
     };
@@ -146,35 +156,33 @@
    /* photoswipe
     * ----------------------------------------------------- */
     var ssPhotoswipe = function() {
-        var items = [],
-            $pswp = $('.pswp')[0],
-            $folioItems = $('.item-folio');
 
-        // get items
-        $folioItems.each( function(i) {
+        // select only anchors that provide an image size (data-size) so non-image links (project pages) are ignored
+        var $folioItems = $('.item-folio__thumb a').filter(function () {
+            var s = $(this).attr('data-size') || $(this).data('size');
+            return typeof s !== 'undefined' && s !== null && String(s).trim() !== '';
+        });
 
-            var $folio = $(this),
-                $thumbLink =  $folio.find('.thumb-link'),
-                $title = $folio.find('.item-folio__title'),
-                $caption = $folio.find('.item-folio__caption'),
-                $titleText = '<h4>' + $.trim($title.html()) + '</h4>',
-                $captionText = $.trim($caption.html()),
-                $href = $thumbLink.attr('href'),
-                $size = $thumbLink.data('size').split('x'),
-                $width  = $size[0],
-                $height = $size[1];
-        
-            var item = {
-                src  : $href,
-                w    : $width,
-                h    : $height
-            }
+        // nothing to do if there are no image anchors
+        if (!$folioItems.length) return;
 
-            if ($caption.length > 0) {
-                item.title = $.trim($titleText + $captionText);
-            }
+        var items = [];
 
-            items.push(item);
+        // build items array from the filtered anchors
+        $folioItems.each(function () {
+            var $this = $(this);
+            var href = $this.attr('href');
+            var size = $this.attr('data-size') || $this.data('size') || '';
+            var sizeParts = String(size).split('x');
+            var w = parseInt(sizeParts[0], 10) || 0;
+            var h = parseInt(sizeParts[1], 10) || 0;
+
+            items.push({
+                src: href,
+                w: w,
+                h: h,
+                title: $this.attr('title') || ''
+            });
         });
 
         // bind click event

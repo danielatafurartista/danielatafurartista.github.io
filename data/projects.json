@@ -1,0 +1,50 @@
+{
+  "projects": [
+    {
+      "slug": "shutterbug",
+      "title": "Shutterbug",
+      "category": "-",
+      "description": "Descripción breve del proyecto Shutterbug.",
+      "images": [
+        { "src": "images/20250627_204837.jpg", "alt": "Shutterbug main", "caption": "" },
+        { "src": "images/20250627_204837.jpg", "alt": "Shutterbug detail", "caption": "Detalle 1" }
+      ]
+    },
+    {
+      "slug": "woodcraft",
+      "title": "Woodcraft",
+      "category": "-",
+      "description": "Descripción breve del proyecto Woodcraft.",
+      "images": [
+        { "src": "images/20250628_180640.jpg", "alt": "Woodcraft main" }
+      ]
+    },
+    {
+      "slug": "puntoapunto",
+      "title": "Punto a Punto",
+      "category": "-",
+      "description": "Información adicional sobre el proyecto Punto a Punto.",
+      "images": [
+        { "src": "images/trabajo/PuntoAPunto.png", "alt": "Punto a Punto" }
+      ]
+    },
+    {
+      "slug": "instalacion",
+      "title": "Cuerpo Invadido",
+      "category": "Técnica Mixta",
+      "description": "Detalles de la instalación Cuerpo Invadido.",
+      "images": [
+        { "src": "images/trabajo/instalacion.png", "alt": "Instalacion" }
+      ]
+    },
+    {
+      "slug": "performance",
+      "title": "Muerde si tienes que morder",
+      "category": "Performance",
+      "description": "Detalles del performance.",
+      "images": [
+        { "src": "images/trabajo/performance.png", "alt": "Performance" }
+      ]
+    }
+  ]
+}

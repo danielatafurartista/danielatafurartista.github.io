@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Adjustments for two-column layout */
+        #project-content-row {
+            padding-top: 5rem;
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        /* Resized Carousel */
+        #project-carousel { 
+            position: relative; 
+            margin-bottom: 1rem;
+            width: 100%;
+            background-color: #f7f7f7;
+        }
+        #project-carousel .slide { display: none; }
+        #project-carousel .slide:first-child { display: block; }
+        #project-carousel img { 
+            width: 100%;
+            height: auto;
+            max-height: 75vh;
+            object-fit: contain;
+        }
+
+        /* Navigation Buttons */
+        .carousel-nav { text-align: center; margin-top: 1rem; display: none; }
+        .carousel-nav button { 
+            background: #333; color: white; border: none; 
+            padding: 0.5rem 1rem; margin: 0 0.5rem; cursor: pointer;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .carousel-nav button:hover { background: #555; }
+
+        /* Project Info on the left */
+        #project-info { 
+            width: 100%;
+            text-align: left;
+        }
+        #project-info h1 {
+             font-size: 2.4rem; /* Smaller title for the side column */
+        }
+    </style>
+</head>
+<body id="top">
+
+    <!-- Site header (simplified for project page) -->
+    <header class="s-header">
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+                <img src="images/logo.svg" alt="Homepage">
+            </a>
+        </div>
+        <nav class="header-nav-wrap">
+            <ul class="header-main-nav">
+                <li><a href="index.html#works" data-translate="return_to_works">Volver a Trabajos</a></li>
+                <li class="language-dropdown">
+                    <a href="#" class="language-toggle" data-translate="language">Idioma</a>
+                    <ul class="language-menu">
+                        <li><a href="#" class="lang-btn" data-lang="en" data-translate="lang_english">English</a></li>
+                        <li><a href="#" class="lang-btn" data-lang="es" data-translate="lang_spanish">Español</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+    </header> <!-- end s-header -->
+
+    <main id="project-root" class="container">
+        <div id="project-content-row" class="row">
+            
+            <!-- Left Column: Project Info -->
+            <div class="column large-4 medium-5">
+                <div id="project-info">
+                    <!-- Title and description will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Right Column: Carousel -->
+            <div class="column large-8 medium-7">
+                <div id="project-carousel">
+                    <!-- Images will be loaded here by project.js -->
+                </div>
+                <div class="carousel-nav">
+                    <button id="prev-slide">« ANT</button>
+                    <button id="next-slide">SIG »</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Add all required scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script> 
+    <script src="js/project.js"></script>
+
+</body>
+</html>
