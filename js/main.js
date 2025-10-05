@@ -29,7 +29,7 @@
         $WIN.on('load', function() {
 
             //force page scroll position to top at page refresh
-            // $('html, body').animate({ scrollTop: 0 }, 'normal'); // Comment out or remove this line
+            // $('html, body').animate({ scrollTop: 0 }, 'normal');
 
             // will first fade out the loading animation 
             $("#loader").fadeOut("slow", function() {

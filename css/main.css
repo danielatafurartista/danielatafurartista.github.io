@@ -83,7 +83,7 @@ body {
   font-style: normal;
   font-weight: normal;
   line-height: 1.882;
-  color: #000000;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   /* keep top padding so content doesn't sit under the fixed header */
@@ -551,7 +551,7 @@ form,
   left: 0;
   right: 0;
   bottom: 0;
-  background: #050505;
+  background: #ffffff;
   z-index: 500;
   height: 100vh;
   width: 100%;

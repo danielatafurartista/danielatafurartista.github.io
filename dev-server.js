@@ -29,10 +29,10 @@ function buildSite() {
     try {
         let html = fs.readFileSync('index-template.html', 'utf8');
 
-        const sections = ['works', 'about', 'contact'];
+        const sections = ['works', 'about', 'experience', 'contact'];
 
         sections.forEach(section => {
-            const placeholder = `<div data-include="${section}"></div>`;
+            const placeholder = `<div data-include="${section}"></div>`; 
 
             try {
                 const sectionContent = fs.readFileSync(`views/${section}.html`, 'utf8');

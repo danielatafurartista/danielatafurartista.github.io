@@ -29,6 +29,9 @@ const translations = {
         works_title: "Works",
         works_subtitle: "Artworks",
 
+        // Experience section
+        experience: "Experience",
+
         // Contact section
         contact_title: "Contact",
         contact_subtitle: "Get in touch",
@@ -67,6 +70,9 @@ const translations = {
         // Works section
         works_title: "Trabajos",
         works_subtitle: "Obras",
+
+        // Experience section
+        experience: "Experiencia",
 
         // Contact section
         contact_title: "Contacto",
