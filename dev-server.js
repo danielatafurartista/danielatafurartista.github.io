@@ -81,7 +81,7 @@ const server = http.createServer((req, res) => {
 buildSite();
 
 let buildTimeout = null;
-function scheduleBuild(delay = 100) {
+function scheduleBuild(delay = 120) {
     if (buildTimeout) clearTimeout(buildTimeout);
     buildTimeout = setTimeout(() => {
         buildSite();
@@ -119,15 +119,45 @@ if (fs.existsSync('css/')) {
             }
         });
     } catch (err) {
-        // fs.watch may throw on some platforms; fallback to polling via fs.readdir if needed
         console.warn('⚠️ css folder watch failed, changes to CSS may not auto-rebuild:', err.message);
     }
+}
+
+// NEW: watch entire project directory (recursive where supported)
+// - Debounced rebuilds
+// - Ignore generated index.html and common VCS/node folders
+try {
+    const IGNORE_PREFIXES = ['node_modules', '.git', '.vscode'];
+    const GENERATED_FILES = ['index.html']; // avoid rebuild loop when index.html is written
+
+    fs.watch(__dirname, { recursive: true }, (eventType, filename) => {
+        if (!filename) return;
+        // normalize forward slashes
+        const normalized = filename.replace(/\\/g, '/');
+
+        // ignore generated files to prevent rebuild loops
+        if (GENERATED_FILES.includes(path.basename(normalized))) return;
+
+        // ignore common folders
+        for (const p of IGNORE_PREFIXES) {
+            if (normalized.startsWith(p + '/') || normalized === p) return;
+        }
+
+        // ignore temporary editor swap files or hidden temp names
+        if (normalized.startsWith('.') || normalized.endsWith('~') || normalized.indexOf('~$') !== -1) return;
+
+        // don't trigger on our own dev-server.js reading index.html when building (best-effort)
+        console.log(`📝 ${normalized} changed (${eventType}) — scheduling rebuild`);
+        scheduleBuild();
+    });
+} catch (err) {
+    console.warn('⚠️ Project-wide watch failed, fallback watches remain:', err.message);
 }
 
 server.listen(PORT, () => {
     console.log('\n🚀 Development server started!');
     console.log(`🌐 Website: http://localhost:${PORT}`);
-    console.log('📝 Edit files in views/, index-template.html or css/ - auto-rebuilds enabled');
+    console.log('📝 Edit files in views/, index-template.html, css/ or any project file - auto-rebuilds enabled');
     console.log('🛑 Press Ctrl+C to stop\n');
 });
 
