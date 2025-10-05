@@ -3308,4 +3308,29 @@ html[data-useragent*='rv:11.0'] .ss-go-top::after {
     display: none;
   }
 }
+
+/* ===================================================================
+ * # project page
+ * ------------------------------------------------------------------- */
+
+#project-info h1 {
+    color: #000000;
+}
+
+#project-info p {
+    color: #000000; /* Sets the text color to black */
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+.carousel-nav button {
+    color: #000000;
+    border-color: #000000;
+}
+
+.carousel-nav button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 /*# sourceMappingURL=main.css.map */

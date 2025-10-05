@@ -55,8 +55,9 @@
             <div class="title">
                 <h1>${project.title}</h1>
             </div>
-            <p>${project.description || ''}</p>
-            <p><strong>Categoría:</strong> ${project.category || 'N/A'}</p>
+            <p> ${project.technical_details.replace(/\n/g, '<br>') || 'N/A'}</p>
+            <p>${(project.description || '').replace(/\n/g, '<br>')}</p>
+            
         `;
         infoContainer.html(infoHtml);
 

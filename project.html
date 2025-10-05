@@ -7,11 +7,21 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon"  type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
     <style>
         /* Adjustments for two-column layout */
         #project-content-row {
             padding-top: 5rem;
             align-items: flex-start; /* Align items to the top */
+        }
+
+        /* Add padding to the right column for more space */
+        #project-content-row .column:last-child {
+            padding-left: 90px;
         }
 
         /* Resized Carousel */
@@ -77,14 +87,14 @@
         <div id="project-content-row" class="row">
             
             <!-- Left Column: Project Info -->
-            <div class="column large-4 medium-5">
+            <div class="column large-5 medium-6">
                 <div id="project-info">
                     <!-- Title and description will be loaded here -->
                 </div>
             </div>
 
             <!-- Right Column: Carousel -->
-            <div class="column large-8 medium-7">
+            <div class="column large-7 medium-6">
                 <div id="project-carousel">
                     <!-- Images will be loaded here by project.js -->
                 </div>
