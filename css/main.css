@@ -55,6 +55,16 @@ html {
   font-size: 10px;
 }
 
+/* Prevent horizontal overflow on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Better text wrapping for all elements */
+* {
+  word-wrap: break-word;
+}
+
 @media screen and (max-width:400px) {
   html {
     font-size: 9.411764705882353px;
@@ -2698,6 +2708,43 @@ input::-moz-focus-inner {
   .masonry__brick:nth-child(2) {
     margin-top: 0;
   }
+
+  .s-works {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+  }
+
+  .masonry-wrap {
+    width: 95%;
+    margin-top: 8rem;
+  }
+
+  .item-folio {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .s-works {
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+  }
+
+  .item-folio {
+    padding: 30px 15px;
+  }
+
+  .item-folio__text {
+    padding: 2rem;
+  }
+
+  .item-folio__title {
+    font-size: 1.6rem;
+  }
+
+  .item-folio__cat {
+    font-size: 1.4rem;
+  }
 }
 
 .item-folio {
@@ -2805,8 +2852,10 @@ input::-moz-focus-inner {
   font-family: "Roboto", sans-serif;
   font-size: 6rem;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.2;
   margin: 5.6rem 0 8rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-infos {
@@ -2918,7 +2967,7 @@ input::-moz-focus-inner {
   }
 
   .contact-email {
-    font-size: 9vw;
+    font-size: 7vw;
   }
 
   .contact-infos {
@@ -2928,6 +2977,11 @@ input::-moz-focus-inner {
 }
 
 @media screen and (max-width:600px) {
+  .contact-email {
+    font-size: 6vw;
+    line-height: 1.3;
+  }
+
   .contact-social ul li {
     margin-right: 1.2rem;
   }
@@ -2939,6 +2993,11 @@ input::-moz-focus-inner {
 }
 
 @media screen and (max-width:400px) {
+  .contact-email {
+    font-size: 5.5vw;
+    margin: 4rem 0 6rem;
+  }
+
   .contact-infos {
     font-size: 3rem;
   }

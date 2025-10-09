@@ -92,6 +92,79 @@
         #project-info h1 {
              font-size: 2.4rem; /* Smaller title for the side column */
         }
+
+        /* Mobile: Carousel on top, text below */
+        @media screen and (max-width: 800px) {
+            #project-content-row {
+                display: flex;
+                flex-direction: column;
+                padding-top: 2rem;
+            }
+
+            /* Carousel column appears first */
+            #project-content-row .column:last-child {
+                order: -1;
+                padding-left: 0;
+                margin-bottom: 3rem;
+            }
+
+            /* Text column appears second */
+            #project-content-row .column:first-child {
+                order: 1;
+            }
+
+            #project-carousel img {
+                max-height: 60vh;
+            }
+
+            #project-info h1 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            #project-info p {
+                font-size: 1.6rem;
+                line-height: 1.6;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            #project-content-row {
+                padding-top: 1rem;
+            }
+
+            #project-content-row .column:last-child {
+                margin-bottom: 2rem;
+            }
+
+            #project-carousel img {
+                max-height: 50vh;
+            }
+
+            #project-info h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            #project-info p {
+                font-size: 1.5rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            #project-carousel img {
+                max-height: 40vh;
+            }
+
+            #project-info h1 {
+                font-size: 1.6rem;
+            }
+
+            #project-info p {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body id="top">
