@@ -3,7 +3,7 @@ const http = require('http');
 const path = require('path');
 const url = require('url');
 
-const PORT = 8000;
+const PORT = 8080;
 
 const mimeTypes = {
     '.html': 'text/html',
@@ -29,10 +29,10 @@ function buildSite() {
     try {
         let html = fs.readFileSync('index-template.html', 'utf8');
 
-        const sections = ['works', 'about', 'experience', 'contact'];
+        const sections = ['about', 'works', 'experience', 'contact'];
 
         sections.forEach(section => {
-            const placeholder = `<div data-include="${section}"></div>`; 
+            const placeholder = `<div data-include="${section}"></div>`;
 
             try {
                 const sectionContent = fs.readFileSync(`views/${section}.html`, 'utf8');

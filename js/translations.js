@@ -1,90 +1,8 @@
 // Translation system for Epitome portfolio
-const translations = {
-    en: {
-        // Navigation
-        intro: "Intro",
-        about: "About",
-        services: "Services",
-        works: "Works",
-        contact: "Contact",
+const translations = {};
 
-        // Hero section
-        hero_greeting: "Hello, I'm Pablo",
-        hero_title_line1: "I'm creating this",
-        hero_title_line2: "website so Dani",
-        hero_title_line3: "can see how the journey is <3",
-        scroll_more: "Scroll For More",
-
-        // About section
-        about_title: "About Me",
-        about_subtitle: "More about me",
-        about_me_section:"My artistic research revolves around the body as a territory of experience and transformation, exploring its material, symbolic, and social boundaries. Works such as Muerde si tienes que Morder, Hartazgo, and Cenicera unfold performative actions that expose the tension between the intimate and the collective, while Cuerpo invadido and Punto a Punto expand this inquiry into installation and the relationship between space, object, and gesture. Together, these works aim to open questions about vulnerability, resistance, and the ways in which art activates processes of meaning through the body.",
-        education: "Exhibitions and Education",
-
-        // Services section  
-        services_title: "Services",
-        services_subtitle: "What I do",
-
-        // Works section
-        works_title: "Works",
-        works_subtitle: "Artworks",
-
-        // Experience section
-        experience: "Experience",
-
-        // Contact section
-        contact_title: "Contact",
-        contact_subtitle: "Get in touch",
-
-        // Language switcher
-        language: "Language",
-        lang_english: "English",
-        lang_spanish: "Español",
-        return_to_works: "Return to Works"
-    },
-    es: {
-        // Navigation
-        intro: "Inicio",
-        about: "Acerca",
-        services: "Servicios",
-        works: "Trabajos",
-        contact: "Contacto",
-
-        // Hero section
-        hero_greeting: "Hola, soy Pablo",
-        hero_title_line1: "Estoy haciendo esta",
-        hero_title_line2: "pagina web para que Dani",
-        hero_title_line3: "vea como es la vuelta <3",
-        scroll_more: "Desliza para más",
-
-        // About section
-        about_title: "Acerca de Mí",
-        about_subtitle: "Más sobre mí",
-        about_me_section:"Mi investigación artística se articula en torno al cuerpo como territorio de experiencia y transformación, explorando sus límites materiales, simbólicos y sociales. Obras como Muerde si tienes que Morder, Hartazgo y Cenicera plantean acciones performáticas que hacen visible la tensión entre lo íntimo y lo colectivo, mientras que Cuerpo invadido y Punto a Punto expanden esta reflexión hacia la instalación y la relación entre espacio, objeto y gesto. En conjunto, estas obras buscan abrir preguntas sobre la vulnerabilidad, la resistencia y las formas en que el arte activa procesos de sentido desde lo corporal.",
-        education: "Exposiciones y Educación",
-
-        // Services section
-        services_title: "Servicios",
-        services_subtitle: "Lo que hago",
-
-        // Works section
-        works_title: "Trabajos",
-        works_subtitle: "Obras",
-
-        // Experience section
-        experience: "Experiencia",
-
-        // Contact section
-        contact_title: "Contacto",
-        contact_subtitle: "Ponte en contacto",
-
-        // Language switcher
-        language: "Idioma",
-        lang_english: "English",
-        lang_spanish: "Español",
-        return_to_works: "Volver a Trabajos"
-    }
-};
+// Supported languages
+const supportedLanguages = ['en', 'es'];
 
 // Function to detect browser language
 function detectBrowserLanguage() {
@@ -97,13 +15,29 @@ function detectBrowserLanguage() {
         const primaryLang = lang.split('-')[0].toLowerCase();
 
         // Check if we support this language
-        if (translations[primaryLang]) {
+        if (supportedLanguages.includes(primaryLang)) {
             return primaryLang;
         }
     }
 
     // Fallback to Spanish (since your content is originally in Spanish)
     return 'es';
+}
+
+// Function to load translation file
+async function loadTranslations(lang) {
+    try {
+        const response = await fetch(`data/translations/${lang}.json`);
+        if (!response.ok) {
+            throw new Error(`Failed to load ${lang}.json`);
+        }
+        const data = await response.json();
+        translations[lang] = data;
+        return true;
+    } catch (error) {
+        console.error(`Error loading ${lang} translations:`, error);
+        return false;
+    }
 }
 
 // Function to log detected language (for debugging)
@@ -149,23 +83,43 @@ function updateTranslations() {
 }
 
 // Function to switch language
-function switchLanguage(lang) {
-    if (translations[lang]) {
-        currentLang = lang;
-        updateTranslations();
-
-        // Update language switcher buttons
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+async function switchLanguage(lang) {
+    if (!supportedLanguages.includes(lang)) {
+        console.error(`Language ${lang} is not supported`);
+        return;
     }
+
+    // Load translations if not already loaded
+    if (!translations[lang]) {
+        const loaded = await loadTranslations(lang);
+        if (!loaded) {
+            console.error(`Failed to switch to ${lang}`);
+            return;
+        }
+    }
+
+    currentLang = lang;
+    updateTranslations();
+
+    // Update language switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-lang="${lang}"]`)?.classList.add('active');
+
+    // Dispatch custom event for other scripts to listen to
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
 }
 
 // Initialize translations when DOM is loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Log language detection info for debugging
-    logLanguageDetection();
+document.addEventListener('DOMContentLoaded', async function () {
+    // Load the current language translations
+    await loadTranslations(currentLang);
+
+    // Log language detection info for debugging (disable in production)
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        logLanguageDetection();
+    }
 
     updateTranslations();
 
