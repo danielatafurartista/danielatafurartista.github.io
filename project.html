@@ -47,13 +47,23 @@
             width: 100%;
             background-color: #f7f7f7;
         }
-        #project-carousel .slide { display: none; }
-        #project-carousel .slide:first-child { display: block; }
+        #project-carousel .slide { 
+            display: none; 
+        }
+        #project-carousel .slide:first-child { 
+            display: block; 
+        }
         #project-carousel img { 
             width: 100%;
             height: auto;
             max-height: 75vh;
             object-fit: contain;
+        }
+        #project-carousel iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            max-height: 75vh;
+            border: none;
         }
 
         /* Navigation Buttons */
@@ -113,7 +123,8 @@
                 order: 1;
             }
 
-            #project-carousel img {
+            #project-carousel img,
+            #project-carousel iframe {
                 max-height: 60vh;
             }
 
@@ -137,7 +148,8 @@
                 margin-bottom: 2rem;
             }
 
-            #project-carousel img {
+            #project-carousel img,
+            #project-carousel iframe {
                 max-height: 50vh;
             }
 
@@ -153,7 +165,8 @@
         }
 
         @media screen and (max-width: 400px) {
-            #project-carousel img {
+            #project-carousel img,
+            #project-carousel iframe {
                 max-height: 40vh;
             }
 

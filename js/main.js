@@ -28,19 +28,22 @@
             var loader = document.getElementById('loader');
             var preloader = document.getElementById('preloader');
 
-            loader.style.transition = 'opacity 0.5s';
-            loader.style.opacity = '0';
-
-            setTimeout(function () {
-                loader.style.display = 'none';
-
-                preloader.style.transition = 'opacity 0.5s';
-                preloader.style.opacity = '0';
+            // Only run preloader animations if elements exist
+            if (loader && preloader) {
+                loader.style.transition = 'opacity 0.5s';
+                loader.style.opacity = '0';
 
                 setTimeout(function () {
-                    preloader.style.display = 'none';
+                    loader.style.display = 'none';
+
+                    preloader.style.transition = 'opacity 0.5s';
+                    preloader.style.opacity = '0';
+
+                    setTimeout(function () {
+                        preloader.style.display = 'none';
+                    }, 500);
                 }, 500);
-            }, 500);
+            }
 
             // for hero content animations 
             document.documentElement.classList.remove('ss-preload');

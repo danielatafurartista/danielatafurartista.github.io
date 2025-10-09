@@ -49,13 +49,44 @@
         // 1. Build Carousel
         const carouselContainer = document.getElementById('project-carousel');
         let carouselHtml = '';
-        if (project.images && project.images.length) {
-            project.images.forEach((img, index) => {
-                // First image loads eager with high priority, rest lazy with async decoding
+
+        // Support both "images" (backward compatibility) and "media" (new format)
+        const mediaItems = project.media || project.images || [];
+
+        if (mediaItems.length) {
+            mediaItems.forEach((item, index) => {
+                // First item loads eager with high priority, rest lazy
                 const loading = index === 0 ? 'eager' : 'lazy';
                 const fetchpriority = index === 0 ? 'fetchpriority="high"' : '';
                 const decoding = index === 0 ? 'decoding="sync"' : 'decoding="async"';
-                carouselHtml += `<div class="slide"><img src="${img.src}" alt="${img.alt || content.title}" loading="${loading}" ${fetchpriority} ${decoding}></div>`;
+
+                // Check if item has explicit type or infer from structure
+                const itemType = item.type || (item.videoId ? 'youtube' : 'image');
+
+                if (itemType === 'youtube') {
+                    // YouTube video embed
+                    carouselHtml += `
+                        <div class="slide">
+                            <iframe 
+                                src="https://www.youtube.com/embed/${item.videoId}?rel=0" 
+                                title="${item.alt || content.title}"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen
+                                loading="${loading}">
+                            </iframe>
+                        </div>`;
+                } else {
+                    // Image
+                    carouselHtml += `
+                        <div class="slide">
+                            <img src="${item.src}" 
+                                 alt="${item.alt || content.title}" 
+                                 loading="${loading}" 
+                                 ${fetchpriority} 
+                                 ${decoding}>
+                        </div>`;
+                }
             });
         }
         carouselContainer.innerHTML = carouselHtml;

@@ -12,17 +12,28 @@
         "technical_details": "Installation and Performance\nDimensions: 1.5 x 7 m\nFique curtain\nRed-dyed fique rope\nSack needle\nCali, Colombia\n2023 - ongoing",
         "description": "Installation and performance that aims to highlight the value of handmade work, emphasizing its social, artistic, political, and mental health dimensions. The piece consists of a fique curtain embroidered with slogans in red-dyed fique rope that reflect on these dimensions. More than a finished work, it is conceived as a constantly evolving process, in which the act of embroidering live during the exhibition highlights the time and process of continuous making."
       },
-      "images": [
+      "media": [
         {
+          "type": "image",
           "src": "images/20250627_204837.jpg",
           "alt": "Shutterbug main",
           "caption": ""
         },
-        { "src": "images/20250628_180640.jpg", "alt": "Cuerpo Invadido main" },
         {
+          "type": "image",
+          "src": "images/20250628_180640.jpg",
+          "alt": "Cuerpo Invadido main"
+        },
+        {
+          "type": "image",
           "src": "images/20250627_204837.jpg",
           "alt": "Shutterbug detail",
           "caption": "Detalle 1"
+        },
+        {
+          "type": "youtube",
+          "videoId": "aAywKPwaCCs",
+          "alt": "Punto a Punto - Performance"
         }
       ]
     },
@@ -38,8 +49,12 @@
         "technical_details": "Installation\nDimensions: 1.5 x 2 m\nTranslucent fabrics\nRed spotlight\nDrypoint matrices on acrylic\nMetal rings\nCali, Colombia\n2024",
         "description": "Immersive installation that addresses the experience of abortion in the current Colombian context, exploring social pressure on bodies, guilt, and loneliness. The work contrasts the seductive beauty of light and materials with the rawness of personal narratives, inviting reflection on the tensions that persist even within legality."
       },
-      "images": [
-        { "src": "images/20250628_180640.jpg", "alt": "Cuerpo Invadido main" }
+      "media": [
+        {
+          "type": "image",
+          "src": "images/20250628_180640.jpg",
+          "alt": "Cuerpo Invadido main"
+        }
       ]
     },
     {
@@ -54,8 +69,12 @@
         "technical_details": "Video performance\nCo-authored with Melanie Quiroga Gil and\nValentina Rubio\nDuration: 6:46 min\nCali, Colombia\n2024",
         "description": "Collective action among three women that explores intimacy, vulnerability, and power through the gesture of depositing ashes on the body. The work tensions the boundaries between submission and consent in an environment of trust and affection."
       },
-      "images": [
-        { "src": "images/trabajo/PuntoAPunto.png", "alt": "Punto a Punto" }
+      "media": [
+        {
+          "type": "image",
+          "src": "images/trabajo/PuntoAPunto.png",
+          "alt": "Punto a Punto"
+        }
       ]
     },
     {
@@ -70,8 +89,12 @@
         "technical_details": "Performance\nCo-authored with Melanie Quiroga Gil\nDuration: 3:00 min\nCali, Colombia\n2025",
         "description": "The impulse bursts forth without pause or balance: it tenses the body, accelerates the rhythm, and drags us toward the excessive gesture. The action converts the body into a mouth that bites, a hand that snatches, and a gaze that devours, exposing satiation as a physical and emotional force that overflows all limits."
       },
-      "images": [
-        { "src": "images/trabajo/instalacion.png", "alt": "Instalacion" }
+      "media": [
+        {
+          "type": "image",
+          "src": "images/trabajo/instalacion.png",
+          "alt": "Instalacion"
+        }
       ]
     },
     {
@@ -86,8 +109,12 @@
         "technical_details": "Performance\nDuration: 9:15 minutes\nGuanajuato Capital, México\n2025",
         "description": "Action performed on the steps of the University of Guanajuato, in which I bite my own legs as a gesture of marking and resistance. The work reflects on the migrant body, self-affirmation, and the vital disposition to sustain one's own processes."
       },
-      "images": [
-        { "src": "images/trabajo/performance.png", "alt": "Performance" }
+      "media": [
+        {
+          "type": "image",
+          "src": "images/trabajo/performance.png",
+          "alt": "Performance"
+        }
       ]
     }
   ]
