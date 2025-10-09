@@ -5,25 +5,48 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Daniela Tafur</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Daniela Tafur - Artist Portfolio</title>
+    <meta name="description" content="Daniela Tafur's artistic research explores the body as territory of experience and transformation through performance, installation, and multimedia art. View her works including Punto a Punto, Cuerpo Invadido, and more.">
+    <meta name="author" content="Daniela Tafur">
 
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- SEO & Social Meta Tags
+    ================================================== -->
+    <meta name="keywords" content="Daniela Tafur, artist, performance art, installation art, contemporary art, Colombian art">
+    <meta property="og:title" content="Daniela Tafur - Artist Portfolio">
+    <meta property="og:description" content="Artistic research exploring the body as territory of experience and transformation through performance and installation.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://danielatafurartista.github.io/images/20250627_204837.jpg">
+    <meta property="og:url" content="https://danielatafurartista.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daniela Tafur - Artist Portfolio">
+    <meta name="twitter:description" content="Performance and installation artist exploring body, vulnerability, and resistance.">
+
+    <!-- Preconnect to external domains
+    ================================================== -->
+    <link rel="preconnect" href="https://www.instagram.com">
+    <link rel="dns-prefetch" href="https://www.instagram.com">
+
+    <!-- Preload critical resources
+    ================================================== -->
+    <link rel="preload" href="css/base.css" as="style">
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="data/translations/es.json" as="fetch" crossorigin>
+    <link rel="preload" href="images/logo.svg" as="image">
+
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/vendor.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/vendor.css"></noscript>
     <link rel="stylesheet" href="css/main.css">
 
     <!-- script
     ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-    <script src="js/translations.js"></script>
+    <script src="js/pace.min.js" defer></script>
 
     <!-- favicons
     ================================================== -->
@@ -45,13 +68,12 @@
 
         <div class="header-logo">
             <a class="site-logo" href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
+                <img src="images/logo.svg" alt="Homepage" loading="eager" fetchpriority="high" decoding="sync">
             </a>
         </div>
 
         <nav class="header-nav-wrap">
             <ul class="header-main-nav">
-                <!-- <li class="current"><a class="smoothscroll" href="#intro" data-translate-title="intro" data-translate="intro">Intro</a></li> -->
                 <li><a class="smoothscroll" href="#about" data-translate-title="about" data-translate="about">Acerca</a></li>
                 <li><a class="smoothscroll" href="#works" data-translate-title="works" data-translate="works">Trabajos</a></li>
                 <li><a class="smoothscroll" href="#experience" data-translate-title="experience" data-translate="experience">Experiencia</a></li>
@@ -66,7 +88,11 @@
             </ul>
 
             <ul class="header-social">
-                <li><a href="https://www.instagram.com/danielasntr"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/danielasntr" aria-label="Visit Daniela Tafur on Instagram" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a></li>
             </ul>
         </nav>
 
@@ -74,7 +100,6 @@
 
     </header> <!-- end s-header -->
 
-    <div data-include="intro"></div>
     <div data-include="about"></div>
     <div data-include="works"></div>
     <div data-include="experience"></div>
@@ -85,9 +110,9 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/plugins.js" defer></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

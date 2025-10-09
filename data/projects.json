@@ -2,46 +2,90 @@
   "projects": [
     {
       "slug": "puntoapunto",
-      "title": "Punto a Punto",
-      "technical_details": "Instalación y Performance\nDimensiones: 1,5 x 7 m\nTelón de fique\nCabuya de fique teñida de rojo\nAguja de costal\nCali, Colombia\n2023 - en proceso / ongoing",
-      "description": "Instalación y performance que pretende resaltar el valor del trabajo hecho a mano, destacando su dimensión social, artística, política y de salud mental. La pieza se compone de un telón de fique bordado con consignas en cabuya de fique teñida de rojo, que reflexionan sobre estas dimensiones. Más que una obra terminada, se concibe como un proceso en constante evolución, en el que el acto de bordar en vivo durante la exhibición resalta el tiempo y proceso del hacer continuo.",
+      "es": {
+        "title": "Punto a Punto",
+        "technical_details": "Instalación y Performance\nDimensiones: 1,5 x 7 m\nTelón de fique\nCabuya de fique teñida de rojo\nAguja de costal\nCali, Colombia\n2023 - en proceso / ongoing",
+        "description": "Instalación y performance que pretende resaltar el valor del trabajo hecho a mano, destacando su dimensión social, artística, política y de salud mental. La pieza se compone de un telón de fique bordado con consignas en cabuya de fique teñida de rojo, que reflexionan sobre estas dimensiones. Más que una obra terminada, se concibe como un proceso en constante evolución, en el que el acto de bordar en vivo durante la exhibición resalta el tiempo y proceso del hacer continuo."
+      },
+      "en": {
+        "title": "Punto a Punto",
+        "technical_details": "Installation and Performance\nDimensions: 1.5 x 7 m\nFique curtain\nRed-dyed fique rope\nSack needle\nCali, Colombia\n2023 - ongoing",
+        "description": "Installation and performance that aims to highlight the value of handmade work, emphasizing its social, artistic, political, and mental health dimensions. The piece consists of a fique curtain embroidered with slogans in red-dyed fique rope that reflect on these dimensions. More than a finished work, it is conceived as a constantly evolving process, in which the act of embroidering live during the exhibition highlights the time and process of continuous making."
+      },
       "images": [
-        { "src": "images/20250627_204837.jpg", "alt": "Shutterbug main", "caption": "" },
-        { "src": "images/20250627_204837.jpg", "alt": "Shutterbug detail", "caption": "Detalle 1" }
+        {
+          "src": "images/20250627_204837.jpg",
+          "alt": "Shutterbug main",
+          "caption": ""
+        },
+        { "src": "images/20250628_180640.jpg", "alt": "Cuerpo Invadido main" },
+        {
+          "src": "images/20250627_204837.jpg",
+          "alt": "Shutterbug detail",
+          "caption": "Detalle 1"
+        }
       ]
     },
     {
       "slug": "cuerpoinvadido",
-      "title": "Cuerpo Invadido",
-      "technical_details": "Instalación\nDimensiones: 1,5 x 2 m\nTelas translúcidas\nReflector rojo\nMatrices de punta seca en acrílico\nAros metálicos\nCali, Colombia\n2024",
-      "description": "Instalación inmersiva que aborda la experiencia del aborto en el contexto colombiano actual, explorando la presión social sobre los cuerpos, la culpa y la soledad. La obra contrapone la belleza seductora de la luz y los materiales con la crudeza de los relatos personales, invitando a reflexionar sobre las tensiones que persisten incluso en la legalidad.",
+      "es": {
+        "title": "Cuerpo Invadido",
+        "technical_details": "Instalación\nDimensiones: 1,5 x 2 m\nTelas translúcidas\nReflector rojo\nMatrices de punta seca en acrílico\nAros metálicos\nCali, Colombia\n2024",
+        "description": "Instalación inmersiva que aborda la experiencia del aborto en el contexto colombiano actual, explorando la presión social sobre los cuerpos, la culpa y la soledad. La obra contrapone la belleza seductora de la luz y los materiales con la crudeza de los relatos personales, invitando a reflexionar sobre las tensiones que persisten incluso en la legalidad."
+      },
+      "en": {
+        "title": "Cuerpo Invadido",
+        "technical_details": "Installation\nDimensions: 1.5 x 2 m\nTranslucent fabrics\nRed spotlight\nDrypoint matrices on acrylic\nMetal rings\nCali, Colombia\n2024",
+        "description": "Immersive installation that addresses the experience of abortion in the current Colombian context, exploring social pressure on bodies, guilt, and loneliness. The work contrasts the seductive beauty of light and materials with the rawness of personal narratives, inviting reflection on the tensions that persist even within legality."
+      },
       "images": [
         { "src": "images/20250628_180640.jpg", "alt": "Cuerpo Invadido main" }
       ]
     },
     {
       "slug": "cenicera",
-      "title": "Cenicera",
-      "technical_details": "Video performance \nCo-autoría con Melanie Quiroga Gil y \nValentina Rubio\nDuración: 6:46 min\nCali, Colombia\n2024",
-      "description": "Acción colectiva entre tres mujeres que explora la intimidad, la vulnerabilidad y el poder a través del gesto de depositar cenizas sobre el cuerpo. La obra tensiona los límites entre sumisión y consentimiento en un entorno de confianza y afecto.",
+      "es": {
+        "title": "Cenicera",
+        "technical_details": "Video performance \nCo-autoría con Melanie Quiroga Gil y \nValentina Rubio\nDuración: 6:46 min\nCali, Colombia\n2024",
+        "description": "Acción colectiva entre tres mujeres que explora la intimidad, la vulnerabilidad y el poder a través del gesto de depositar cenizas sobre el cuerpo. La obra tensiona los límites entre sumisión y consentimiento en un entorno de confianza y afecto."
+      },
+      "en": {
+        "title": "Cenicera",
+        "technical_details": "Video performance\nCo-authored with Melanie Quiroga Gil and\nValentina Rubio\nDuration: 6:46 min\nCali, Colombia\n2024",
+        "description": "Collective action among three women that explores intimacy, vulnerability, and power through the gesture of depositing ashes on the body. The work tensions the boundaries between submission and consent in an environment of trust and affection."
+      },
       "images": [
         { "src": "images/trabajo/PuntoAPunto.png", "alt": "Punto a Punto" }
       ]
     },
     {
       "slug": "hartazgo",
-      "title": "Hartazgo",
-      "technical_details": "Performance \nCo-autoría con Melanie Quiroga Gil\nDuración: 3:00 min\nCali, Colombia\n2025",
-      "description": "El impulso irrumpe sin pausa ni equilibrio: tensa el cuerpo, acelera el ritmo y nos arrastra hacia el gesto desmedido. La acción convierte al cuerpo en boca que muerde, mano que arrebata y mirada que devora, exponiendo el hartazgo como fuerza física y emocional que desborda todo límite.",
+      "es": {
+        "title": "Hartazgo",
+        "technical_details": "Performance \nCo-autoría con Melanie Quiroga Gil\nDuración: 3:00 min\nCali, Colombia\n2025",
+        "description": "El impulso irrumpe sin pausa ni equilibrio: tensa el cuerpo, acelera el ritmo y nos arrastra hacia el gesto desmedido. La acción convierte al cuerpo en boca que muerde, mano que arrebata y mirada que devora, exponiendo el hartazgo como fuerza física y emocional que desborda todo límite."
+      },
+      "en": {
+        "title": "Hartazgo",
+        "technical_details": "Performance\nCo-authored with Melanie Quiroga Gil\nDuration: 3:00 min\nCali, Colombia\n2025",
+        "description": "The impulse bursts forth without pause or balance: it tenses the body, accelerates the rhythm, and drags us toward the excessive gesture. The action converts the body into a mouth that bites, a hand that snatches, and a gaze that devours, exposing satiation as a physical and emotional force that overflows all limits."
+      },
       "images": [
         { "src": "images/trabajo/instalacion.png", "alt": "Instalacion" }
       ]
     },
     {
       "slug": "muerde",
-      "title": "Muerde si tienes que morder",
-      "technical_details": "Performance\nDuración: 9:15 minutos\nGuanajuato Capital, México\n2025",
-      "description": "Acción realizada en las escalinatas de la Universidad de Guanajuato, en la que muerdo mis propias piernas como gesto de marca y resistencia. La obra reflexiona sobre el cuerpo migrante, la autoafirmación y la disposición vital para sostener los propios procesos.",
+      "es": {
+        "title": "Muerde si tienes que morder",
+        "technical_details": "Performance\nDuración: 9:15 minutos\nGuanajuato Capital, México\n2025",
+        "description": "Acción realizada en las escalinatas de la Universidad de Guanajuato, en la que muerdo mis propias piernas como gesto de marca y resistencia. La obra reflexiona sobre el cuerpo migrante, la autoafirmación y la disposición vital para sostener los propios procesos."
+      },
+      "en": {
+        "title": "Muerde si tienes que morder",
+        "technical_details": "Performance\nDuration: 9:15 minutes\nGuanajuato Capital, México\n2025",
+        "description": "Action performed on the steps of the University of Guanajuato, in which I bite my own legs as a gesture of marking and resistance. The work reflects on the migrant body, self-affirmation, and the vital disposition to sustain one's own processes."
+      },
       "images": [
         { "src": "images/trabajo/performance.png", "alt": "Performance" }
       ]
