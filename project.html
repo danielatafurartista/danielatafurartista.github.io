@@ -103,7 +103,7 @@
              font-size: 2.4rem; /* Smaller title for the side column */
         }
 
-        /* Mobile: Carousel on top, text below */
+        /* Mobile: Title first, Carousel second, Text third */
         @media screen and (max-width: 800px) {
             #project-content-row {
                 display: flex;
@@ -111,16 +111,35 @@
                 padding-top: 2rem;
             }
 
-            /* Carousel column appears first */
-            #project-content-row .column:last-child {
-                order: -1;
-                padding-left: 0;
-                margin-bottom: 3rem;
+            /* Make project-info use flexbox to reorder children */
+            #project-info {
+                display: flex;
+                flex-direction: column;
             }
 
-            /* Text column appears second */
+            /* Title appears first */
+            .project-title {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+
+            /* Details appear last (after carousel) */
+            .project-details {
+                order: 3;
+            }
+
+            /* Text column container - adjust order to place title first */
             #project-content-row .column:first-child {
                 order: 1;
+                display: contents; /* This allows children to be reordered independently */
+            }
+
+            /* Carousel appears between title and details */
+            #project-content-row .column:last-child {
+                order: 2;
+                padding-left: 0;
+                margin-bottom: 2rem;
+                margin-top: 0;
             }
 
             #project-carousel img,
@@ -144,8 +163,12 @@
                 padding-top: 1rem;
             }
 
+            .project-title {
+                margin-bottom: 1.5rem;
+            }
+
             #project-content-row .column:last-child {
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
 
             #project-carousel img,
@@ -165,6 +188,14 @@
         }
 
         @media screen and (max-width: 400px) {
+            .project-title {
+                margin-bottom: 1rem;
+            }
+
+            #project-content-row .column:last-child {
+                margin-bottom: 1rem;
+            }
+
             #project-carousel img,
             #project-carousel iframe {
                 max-height: 40vh;

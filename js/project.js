@@ -94,12 +94,13 @@
         // 2. Build Project Info
         const infoContainer = document.getElementById('project-info');
         let infoHtml = `
-            <div class="title">
+            <div class="project-title">
                 <h1>${content.title}</h1>
             </div>
-            <p> ${content.technical_details.replace(/\n/g, '<br>') || 'N/A'}</p>
-            <p>${(content.description || '').replace(/\n/g, '<br>')}</p>
-            
+            <div class="project-details">
+                <p>${content.technical_details.replace(/\n/g, '<br>') || 'N/A'}</p>
+                <p>${(content.description || '').replace(/\n/g, '<br>')}</p>
+            </div>
         `;
         infoContainer.innerHTML = infoHtml;
 
