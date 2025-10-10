@@ -66,6 +66,30 @@
                                 loading="${loading}">
                             </iframe>
                         </div>`;
+                } else if (itemType === 'vimeo') {
+                    carouselHtml += `
+                        <div class="slide">
+                            <iframe 
+                                src="https://player.vimeo.com/video/${item.videoId}?title=0&byline=0&portrait=0" 
+                                title="${item.alt || content.title}"
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture" 
+                                allowfullscreen
+                                loading="${loading}">
+                            </iframe>
+                        </div>`;
+                } else if (itemType === 'dailymotion') {
+                    carouselHtml += `
+                        <div class="slide">
+                            <iframe 
+                                src="https://www.dailymotion.com/embed/video/${item.videoId}?ui-start-screen-info=0&ui-logo=0" 
+                                title="${item.alt || content.title}"
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture; web-share" 
+                                allowfullscreen
+                                loading="${loading}">
+                            </iframe>
+                        </div>`;
                 } else {
                     carouselHtml += `
                         <div class="slide">
