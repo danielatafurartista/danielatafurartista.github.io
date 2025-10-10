@@ -18,17 +18,13 @@
 
     function nextSlide() {
         let newIndex = currentSlide + 1;
-        if (newIndex >= slides.length) {
-            newIndex = 0; // Loop back to the start
-        }
+        if (newIndex >= slides.length) newIndex = 0;
         showSlide(newIndex);
     }
 
     function prevSlide() {
         let newIndex = currentSlide - 1;
-        if (newIndex < 0) {
-            newIndex = slides.length - 1; // Loop to the end
-        }
+        if (newIndex < 0) newIndex = slides.length - 1;
         showSlide(newIndex);
     }
 
@@ -40,13 +36,8 @@
     }
 
     function buildPage(project, lang) {
-        // Get language-specific content
         const content = project[lang] || project.es; // Fallback to Spanish
-
-        // Set page title
         document.title = content.title + ' — Daniela Tafur';
-
-        // 1. Build Carousel
         const carouselContainer = document.getElementById('project-carousel');
         let carouselHtml = '';
 
@@ -64,7 +55,6 @@
                 const itemType = item.type || (item.videoId ? 'youtube' : 'image');
 
                 if (itemType === 'youtube') {
-                    // YouTube video embed
                     carouselHtml += `
                         <div class="slide">
                             <iframe 
@@ -77,7 +67,6 @@
                             </iframe>
                         </div>`;
                 } else {
-                    // Image
                     carouselHtml += `
                         <div class="slide">
                             <img src="${item.src}" 
@@ -91,7 +80,6 @@
         }
         carouselContainer.innerHTML = carouselHtml;
 
-        // 2. Build Project Info
         const infoContainer = document.getElementById('project-info');
         let infoHtml = `
             <div class="project-title">
@@ -104,14 +92,12 @@
         `;
         infoContainer.innerHTML = infoHtml;
 
-        // 3. Initialize Carousel
         slides = Array.from(carouselContainer.querySelectorAll('.slide'));
         const carouselNav = document.querySelector('.carousel-nav');
         const prevButton = document.getElementById('prev-slide');
         const nextButton = document.getElementById('next-slide');
 
         if (slides.length > 1) {
-            // Show navigation only when there are multiple images
             carouselNav.style.display = 'block';
             carouselNav.classList.add('visible');
 
@@ -121,18 +107,14 @@
             prevButton.parentNode.replaceChild(newPrevButton, prevButton);
             nextButton.parentNode.replaceChild(newNextButton, nextButton);
 
-            // Add new event listeners
             newPrevButton.addEventListener('click', prevSlide);
             newNextButton.addEventListener('click', nextSlide);
-
-            showSlide(0); // Ensure first slide is shown
+            showSlide(0);
         } else if (slides.length === 1) {
-            // Hide navigation if only one image
             carouselNav.style.display = 'none';
             carouselNav.classList.remove('visible');
-            showSlide(0); // Show the single image
+            showSlide(0);
         } else {
-            // No images at all
             carouselNav.style.display = 'none';
             carouselNav.classList.remove('visible');
         }
@@ -142,7 +124,6 @@
     let projectsData = null;
 
     function getCurrentLanguage() {
-        // Use the same language detection as translations.js
         return localStorage.getItem('language') || 'es';
     }
 
@@ -157,10 +138,8 @@
         }
 
         if (projectsData && currentProject) {
-            // Data already loaded, just re-render with new language
             buildPage(currentProject, lang);
         } else {
-            // Load data for the first time
             fetch('data/projects.json')
                 .then(function (response) {
                     if (!response.ok) {
@@ -185,14 +164,11 @@
 
     function init() {
         loadAndRender();
-
-        // Listen for language changes
         window.addEventListener('languageChanged', function () {
             loadAndRender();
         });
     }
 
-    // Run on document ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

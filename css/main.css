@@ -100,9 +100,7 @@ body {
   padding-top: 78px;
 }
 
-/* ------------------------------------------------------------------- 
- * ## links
- * ------------------------------------------------------------------- */
+/* ## links */
 a {
   color: #910a0a;
   transition: all 0.3s ease-in-out;
@@ -360,9 +358,7 @@ hr {
   height: 0;
 }
 
-/* ------------------------------------------------------------------- 
- * ## Lists
- * ------------------------------------------------------------------- */
+/* ## Lists */
 ol {
   list-style: decimal;
 }
@@ -420,9 +416,7 @@ dd {
   margin: 0 0 0 2rem;
 }
 
-/* ------------------------------------------------------------------- 
- * ## responsive video container
- * ------------------------------------------------------------------- */
+/* ## responsive video container */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -441,9 +435,7 @@ dd {
   height: 100%;
 }
 
-/* ------------------------------------------------------------------- 
- * ## floated image
- * ------------------------------------------------------------------- */
+/* ## floated image */
 img.pull-right {
   margin: 1.2rem 0 0 2.8rem;
 }
@@ -452,9 +444,7 @@ img.pull-left {
   margin: 1.2rem 2.8rem 0 0;
 }
 
-/* ------------------------------------------------------------------- 
- * ## tables
- * ------------------------------------------------------------------- */
+/* ## tables */
 table {
   border-width: 0;
   width: 100%;
@@ -491,9 +481,7 @@ td:last-child {
   -webkit-overflow-scrolling: touch;
 }
 
-/* ------------------------------------------------------------------- 
- * ## Spacing 
- * ------------------------------------------------------------------- */
+/* ## Spacing */
 button,
 .btn {
   margin-bottom: 1.6rem;
@@ -520,9 +508,7 @@ form,
   margin-bottom: 3.2rem;
 }
 
-/* ------------------------------------------------------------------- 
- * ## pace.js styles - minimal
- * ------------------------------------------------------------------- */
+/* ## pace.js styles - minimal */
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -748,9 +734,7 @@ label > input[type="radio"] {
   top: .2rem;
 }
 
-/* ------------------------------------------------------------------- 
- * ## Style Placeholder Text
- * ------------------------------------------------------------------- */
+/* ## Style Placeholder Text */
 ::-webkit-input-placeholder {
 
   /* WebKit, Blink, Edge */
@@ -793,9 +777,7 @@ label > input[type="radio"] {
   color: #8c8c8c !important;
 }
 
-/* ------------------------------------------------------------------- 
- * ## Change Autocomplete styles in Chrome
- * ------------------------------------------------------------------- */
+/* ## Change Autocomplete styles in Chrome */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus
@@ -859,8 +841,7 @@ input[type="button"]:focus {
   outline: 0;
 }
 
-/* button primary
- * ------------------------------------------------- */
+/* button primary */
 .btn.btn--primary,
 button.btn--primary,
 input[type="submit"].btn--primary,
@@ -885,8 +866,7 @@ input[type="button"].btn--primary:focus {
   border-color: #910a0a;
 }
 
-/* button modifiers
- * ------------------------------------------------- */
+/* button modifiers */
 .btn.full-width,
 button.full-width {
   width: 100%;
@@ -939,12 +919,9 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- 
- * ## additional typo styles 
- * ------------------------------------------------------------------- */
+/* ## additional typo styles */
 
-/* drop cap 
- * ----------------------------------------------- */
+/* drop cap */
 .drop-cap:first-letter {
   float: left;
   margin: 0;
@@ -958,8 +935,7 @@ input::-moz-focus-inner {
   color: #000000;
 }
 
-/* line definition style 
- * ----------------------------------------------- */
+/* line definition style */
 .lining dt,
 .lining dd {
   display: inline;
@@ -985,8 +961,7 @@ input::-moz-focus-inner {
   margin-left: -0.2em;
 }
 
-/* dictionary definition style 
- * ----------------------------------------------- */
+/* dictionary definition style */
 .dictionary-style dt {
   display: inline;
   counter-reset: definitions;
@@ -1117,9 +1092,7 @@ input::-moz-focus-inner {
   color: #7e7e7e;
 }
 
-/* ------------------------------------------------------------------- 
- * ## skillbars
- * ------------------------------------------------------------------- */
+/* ## skillbars */
 .skill-bars {
   list-style: none;
   margin: 6.8rem 0 3.2rem;
@@ -1259,9 +1232,7 @@ input::-moz-focus-inner {
   width: 100%;
 }
 
-/* -------------------------------------------------------------------
- * ## pagination 
- * ------------------------------------------------------------------- */
+/* ## pagination */
 .pgn {
   margin: 3.2rem auto;
   text-align: center;
@@ -1361,10 +1332,6 @@ input::-moz-focus-inner {
   background-color: transparent;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * pagination
- * ------------------------------------------------------------------- */
 @media screen and (max-width:600px) {
   .pgn ul {
     padding: 0 5.2rem;
@@ -1455,10 +1422,6 @@ input::-moz-focus-inner {
   color: #ffffff;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * common and reusable styles
- * ------------------------------------------------------------------- */
 @media screen and (max-width:1200px) {
   .item-title {
     font-size: 3rem;
@@ -1538,9 +1501,7 @@ input::-moz-focus-inner {
   background-color: #050505;
 }
 
-/* -------------------------------------------------------------------
- * ## header logo
- * ------------------------------------------------------------------- */
+/* ## header logo */
 .header-logo {
   display: inline-block;
   margin: 6px 0 0 0;
@@ -1567,9 +1528,7 @@ input::-moz-focus-inner {
   margin: 0;
 }
 
-/* -------------------------------------------------------------------
- * ## main navigation
- * ------------------------------------------------------------------- */
+/* ## main navigation */
 .header-nav-wrap {
   display: inline-block;
 }
@@ -1641,9 +1600,7 @@ input::-moz-focus-inner {
   color: #ffffff;
 }
 
-/* ------------------------------------------------------------------- 
- * ## menu trigger
- * ------------------------------------------------------------------- */
+/* ## menu trigger */
 .header-menu-toggle {
   display: none;
   height: 42px;
@@ -1723,10 +1680,6 @@ input::-moz-focus-inner {
   transform: rotate(225deg);
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * header
- * ------------------------------------------------------------------- */
 @media screen and (max-width:1200px) {
   .header-main-nav {
     font-size: 12px;
@@ -1821,9 +1774,7 @@ input::-moz-focus-inner {
 
 }
 
-/* -------------------------------------------------------------------
- * make sure the menu is visible on larger screens
- * ------------------------------------------------------------------- */
+/* make sure the menu is visible on larger screens */
 @media only screen and (min-width:801px) {
   .header-nav-wrap {
     display: block !important;
@@ -1943,10 +1894,6 @@ input::-moz-focus-inner {
   background-color: #910a0a;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * intro
- * ------------------------------------------------------------------- */
 @media screen and (max-width:1400px) {
   .intro-text h3 {
     font-size: 2.2rem;
@@ -2134,9 +2081,7 @@ input::-moz-focus-inner {
   padding-left: 32px;
 }
 
-/* -------------------------------------------------------------------
- * ## timeline
- * ------------------------------------------------------------------- */
+/* ## timeline */
 .about-experience__timeline {
   margin-top: 1.6rem;
 }
@@ -2262,10 +2207,6 @@ input::-moz-focus-inner {
   margin-top: 0;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * about
- * ------------------------------------------------------------------- */
 @media screen and (max-width:1200px) {
   .s-about {
     padding-top: 17.2rem;
@@ -2512,10 +2453,6 @@ input::-moz-focus-inner {
   color: #910a0a;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * services
- * ------------------------------------------------------------------- */
 @media screen and (max-width:1400px) {
   .services-list .item-service {
     padding: 0 20px;
@@ -2626,10 +2563,6 @@ input::-moz-focus-inner {
   color: #000000;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * cta
- * ------------------------------------------------------------------- */
 @media screen and (max-width:800px) {
   .s-cta {
     font-size: 2.2rem;
@@ -2682,28 +2615,24 @@ input::-moz-focus-inner {
   gap: 60px;
 }
 
-/* Offset second column by adding top margin to odd-positioned items in second column */
 .masonry__brick:nth-child(even) {
   margin-top: 80px;
 }
 
-/* First item in second column gets the offset */
 .masonry__brick:nth-child(2) {
   margin-top: 80px;
 }
 
 .masonry__brick {
   width: 100%;
-  margin-bottom: 0; /* Grid gap handles spacing */
+  margin-bottom: 0;
 }
 
-/* Responsive: single column on mobile */
 @media screen and (max-width: 768px) {
   .masonry {
     grid-template-columns: 1fr;
   }
   
-  /* Remove offset on mobile */
   .masonry__brick:nth-child(even),
   .masonry__brick:nth-child(2) {
     margin-top: 0;
@@ -2755,8 +2684,7 @@ input::-moz-focus-inner {
   transition: all 0.5s ease-in-out;
 }
 
-/* item-folio thumb
- * -------------------------------------- */
+/* item-folio thumb */
 .item-folio__thumb {
   position: relative;
   overflow: hidden;
@@ -2766,7 +2694,7 @@ input::-moz-focus-inner {
     position: relative;
 }
 .item-folio__thumb a::before {
-    display: none; /* removes the old link icon */
+    display: none;
 }
 .item-folio__thumb img {
     vertical-align: bottom;
@@ -2815,9 +2743,7 @@ input::-moz-focus-inner {
     margin-bottom: 0;
 }
 
-/*
- * hover effect
- */
+/* hover effect */
 .item-folio__thumb a:hover .item-folio__caption {
     opacity: 1;
     visibility: visible;
@@ -2916,10 +2842,6 @@ input::-moz-focus-inner {
   display: none;
 }
 
-/* ------------------------------------------------------------------- 
-* responsive:
-* contact
-* ------------------------------------------------------------------- */
 @media screen and (max-width:1300px) {
   .contact-email {
     font-size: 10rem;
@@ -3027,9 +2949,7 @@ footer a:visited {
   color: #ffffff;
 }
 
-/* ------------------------------------------------------------------- 
- * ## copyright
- * ------------------------------------------------------------------- */
+/* ## copyright */
 .ss-copyright {
   margin-top: 2rem;
   padding-right: 80px;
@@ -3051,9 +2971,7 @@ footer a:visited {
   display: none;
 }
 
-/* ------------------------------------------------------------------- 
- * ## go to top
- * ------------------------------------------------------------------- */
+/* ## go to top */
 .ss-go-top {
   position: absolute;
   top: -1px;
@@ -3120,10 +3038,6 @@ footer a:visited {
   top: -165px;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * footer
- * ------------------------------------------------------------------- */
 @media screen and (max-width:1200px) {
   .ss-go-top {
     right: 3rem;
@@ -3188,7 +3102,7 @@ html[data-useragent*='rv:11.0'] .ss-go-top::after {
 
 /* ===================================================================
  * # Language Dropdown
- * ------------------------------------------------------------------- */
+ * =================================================================== */
 .language-dropdown {
   position: relative;
 }
@@ -3308,7 +3222,7 @@ html[data-useragent*='rv:11.0'] .ss-go-top::after {
 
 /* ===================================================================
  * # project page
- * ------------------------------------------------------------------- */
+ * =================================================================== */
 
 #project-info h1 {
     color: #000000;

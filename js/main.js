@@ -8,10 +8,9 @@
     "use strict";
 
     var cfg = {
-        scrollDuration: 800 // smoothscroll duration
+        scrollDuration: 800
     };
 
-    // Add the User Agent to the <html>
     var doc = document.documentElement;
     doc.setAttribute('data-useragent', navigator.userAgent);
 
@@ -24,11 +23,10 @@
 
         window.addEventListener('load', function () {
 
-            // will first fade out the loading animation 
             var loader = document.getElementById('loader');
             var preloader = document.getElementById('preloader');
 
-            // Only run preloader animations if elements exist
+            // Only run animations if elements exist (project page doesn't have them)
             if (loader && preloader) {
                 loader.style.transition = 'opacity 0.5s';
                 loader.style.opacity = '0';
@@ -45,11 +43,9 @@
                 }, 500);
             }
 
-            // for hero content animations 
             document.documentElement.classList.remove('ss-preload');
             document.documentElement.classList.add('ss-loaded');
 
-            // Scroll to hash if present
             if (window.location.hash) {
                 var target = document.querySelector(window.location.hash);
                 if (target) {
@@ -134,19 +130,15 @@
                     var activeLink = document.querySelector('.header-main-nav li a[href="#' + sectionId + '"]');
 
                     if (activeLink) {
-                        // Remove current class from all nav links
                         navigation_links.forEach(function (link) {
                             link.parentElement.classList.remove('current');
                         });
-
-                        // Add current class to active link
                         activeLink.parentElement.classList.add('current');
                     }
                 }
             });
         }, observerOptions);
 
-        // Observe all sections
         sections.forEach(function (section) {
             observer.observe(section);
         });
@@ -173,7 +165,6 @@
                 e.stopPropagation();
 
                 smoothScrollTo(targetElement.offsetTop, cfg.scrollDuration, function () {
-                    // check if menu is open
                     if (document.body.classList.contains('menu-is-open')) {
                         document.querySelector('.header-menu-toggle').click();
                     }
@@ -221,7 +212,6 @@
     /* Helper Functions
      * ------------------------------------------------------ */
 
-    // Smooth scroll to position
     function smoothScrollTo(to, duration, callback) {
         var start = window.pageYOffset;
         var change = to - start;
@@ -248,7 +238,6 @@
         requestAnimationFrame(animateScroll);
     }
 
-    // Slide toggle helper
     function slideToggle(element) {
         if (element.style.display === 'none' || !element.style.display) {
             slideDown(element);
@@ -292,7 +281,6 @@
         }, 300);
     }
 
-    // Check if element is visible
     function isVisible(element) {
         return element.offsetWidth > 0 || element.offsetHeight > 0;
     }

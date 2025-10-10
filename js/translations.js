@@ -1,30 +1,19 @@
-// Translation system for Epitome portfolio
 const translations = {};
-
-// Supported languages
 const supportedLanguages = ['en', 'es'];
 
-// Function to detect browser language
 function detectBrowserLanguage() {
-    // Get all browser language preferences in order
     const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
 
-    // Check each language preference
     for (let lang of browserLangs) {
-        // Extract the primary language code (e.g., 'en' from 'en-US')
         const primaryLang = lang.split('-')[0].toLowerCase();
-
-        // Check if we support this language
         if (supportedLanguages.includes(primaryLang)) {
             return primaryLang;
         }
     }
 
-    // Fallback to Spanish (since your content is originally in Spanish)
     return 'es';
 }
 
-// Function to load translation file
 async function loadTranslations(lang) {
     try {
         const response = await fetch(`data/translations/${lang}.json`);
@@ -40,7 +29,6 @@ async function loadTranslations(lang) {
     }
 }
 
-// Function to log detected language (for debugging)
 function logLanguageDetection() {
     const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
     const savedLang = localStorage.getItem('language');
